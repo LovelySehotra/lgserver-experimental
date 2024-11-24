@@ -23,8 +23,8 @@ The **LG Control Server** is a Node.js-based application designed to control and
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
-   cd <repository-folder>
+   git clone https://github.com/LovelySehotra/lgserver-experimental.git
+   cd lgserver-experimental
    ```
 
 2. Install the required dependencies:
