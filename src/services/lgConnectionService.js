@@ -218,7 +218,3 @@ export const cleanBalloonService = async (host, sshPort, username, password) => 
       client.end();
    }
 }
-
-
-// upload, SFTP stream, send kml , google maps integration, 
-// application follow lgship 
