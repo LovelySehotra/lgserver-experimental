@@ -13,9 +13,7 @@ The **LG Control Server** is a Node.js-based application designed to control and
 3. [How to Run](#how-to-run)
 4. [Adding a New Command](#adding-a-new-command)
 5. [Endpoints](#endpoints)
-6. [Important Notes](#important-notes)
-7. [Future Enhancements](#future-enhancements)
-8. [License](#license)
+6. [License](#license)
 
 ---
 
