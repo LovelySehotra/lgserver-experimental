@@ -37,9 +37,9 @@ The **LG Control Server** is a Node.js-based application designed to control and
 ## Project Structure
 
 - **`server.js`**: Main server entry point. Sets up routes, middleware, and starts the application.
-- **`routers/index.js`**: Contains API route definitions.
-- **`controllers/index.js`**: Includes logic to process incoming API requests.
-- **`services/index.js`**: Handles core SSH interactions and reusable logic.
+- **`routers`**: Contains API route definitions.
+- **`controllers`**: Includes logic to process incoming API requests.
+- **`services`**: Handles core SSH interactions and reusable logic.
 ---
 
 ## How to Run
