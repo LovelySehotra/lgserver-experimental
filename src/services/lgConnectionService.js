@@ -45,10 +45,8 @@ export const executeOrbitService = async (host, sshPort, username, password, com
       let port = parseInt(sshPort, 10)
       await connectSSH(client, { host, port, username, password });
       const result = await executeCommand(client, command);
-      console.log("Command result:", result);
       return result;
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    }
    finally {
@@ -61,11 +59,8 @@ export const cleanVisualizationService = async (host, port, username, password) 
 
       await connectSSH(client, { host, port, username, password });
       const result = await executeCommand(client, "> /var/www/html/kmls.txt");
-      console.log("Command result:", result);
       return result;
    } catch (error) {
-
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    }
    finally {
@@ -88,11 +83,9 @@ export const cleanlogosService = async (host, sshPort, username, password) => {
      
       await connectSSH(client, { host, port, username, password });
       const result = await executeCommand(client, command);
-      console.log("Command result:", result);
       return result;
 
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    }
    finally {
@@ -133,7 +126,6 @@ export const relaunchLGService = async (host, sshPort, username, password, numbe
          return result;
       }
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    }
    finally {
@@ -154,7 +146,6 @@ export const shutdownLGService = async (host, sshPort, username, password, numbe
          return result;
       }
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    } finally {
       client.end();
@@ -174,7 +165,6 @@ export const rebootLGService = async (host, sshPort, username, password, numbero
          return result;
       }
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    } finally {
       client.end();
@@ -187,10 +177,8 @@ export const stopOrbitService = async (host, sshPort, username, password) => {
      
       await connectSSH(client, { host, port, username, password });
       const result = await executeCommand(client, `echo "exittour=true" > /tmp/query.txt`);
-      console.log("Command result:", result);
       return result;
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    } finally {
       client.end()
@@ -212,13 +200,8 @@ export const cleanBalloonService = async (host, sshPort, username, password) => 
       const result = await executeCommand(client, `echo '${blank}' > /var/www/html/kml/slave_${rigs}.kml`);
       return result;
    } catch (error) {
-      console.error("Error during SSH operations:", error);
       return { success: false, message: error.message }
    } finally {
       client.end();
    }
 }
-
-
-// upload, SFTP stream, send kml , google maps integration, 
-// application follow lgship 
