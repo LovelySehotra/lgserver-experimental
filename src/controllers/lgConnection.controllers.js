@@ -2,13 +2,28 @@ import { cleanVisualizationService,cleanlogosService, relaunchLGService, shutdow
 export class LgConnectionController{
     executeOrbit = async(req,res)=>{
         const {host,sshPort,username,password} = req.body;
-        const  connections = await executeOrbitService(host,sshPort,username,password);
-        return res.status(200).json(connections);
+
+        try {
+            const  connections = await executeOrbitService(host,sshPort,username,password);
+            return res.status(200).json(connections);
+        } catch (
+            error
+        ) {
+            throw new Error(error)
+        }
+       
     }
     cleanVisualization = async(req,res)=>{
         const {host, sshPort, username, password, command} = req.body;
-        const response = await cleanVisualizationService(host, sshPort, username, password, command);
-        return res.status(200).json(response);
+        try {
+            const response = await cleanVisualizationService(host, sshPort, username, password, command);
+            return res.status(200).json(response);
+        } catch (
+            error
+        ) {
+            
+        }
+       
     }
 
     cleanlogos = async()=>{

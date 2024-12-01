@@ -1,5 +1,6 @@
 import express from "express";
 import { appRouter } from "../routers/index.js";
+import errorMiddleWare from "../middleware/error.middleware.js";
 
 
 export class Server {
@@ -11,6 +12,7 @@ export class Server {
             return res.status(200).json({message:"pong@@"})
         });
         this.app.use("/api", appRouter);
+        this.app.use(errorMiddleWare);
     
     }
 
