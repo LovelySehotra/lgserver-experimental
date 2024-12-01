@@ -1,5 +1,5 @@
 import Client from "ssh2/lib/client.js";
-import AppError from "../utilis/error.utils";
+import AppError from "../utilis/error.utils.js";
 
 const connectSSH = async (client, config) => {
    return new Promise((resolve, reject) => {
@@ -35,8 +35,6 @@ const executeCommand = async (client, command) => {
       });
    });
 }
-
-
 
 export const executeOrbitService = async (host, sshPort, username, password, command) => {
 
